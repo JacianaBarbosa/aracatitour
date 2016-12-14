@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:id="@+id/layout">
+
+    <Button
+        android:text="Onde comer?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/restaurantes"
+        android:layout_weight="0.24"
+        android:onClick="layout2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <Button
+        android:text="Onde se hospedar?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hoteis"
+        android:layout_weight="0.24"
+        android:onClick="layout3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <Button
+        android:text="Pontos históricos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pontos"
+        android:layout_weight="0.24"
+        android:onClick="layout4"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <Button
+        android:text="Locais próximos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/locais"
+        android:layout_weight="0.24"
+        android:onClick="layout5"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+</LinearLayout>
