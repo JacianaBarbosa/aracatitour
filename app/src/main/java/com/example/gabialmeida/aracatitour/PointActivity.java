@@ -8,43 +8,48 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.gabialmeida.aracatitour.Database.ManageDatabase;
+
+import java.util.ArrayList;
+
 /**
  * Created by Gabi Almeida on 25/11/2016.
  */
 
-public class NovaTela2 extends Activity {
-
-    private ListView listaItens;
-    private String[] itens = {
-            "Hotel"
-    };
+public class PointActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout3);
+        setContentView(R.layout.layout_pnt);
 
-        listaItens = (ListView) findViewById(R.id.list_view_hoteis);
+        ManageDatabase dbManager = new ManageDatabase(this);
+        //dbManager.deleteTablePonto();
 
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(
-                getApplicationContext(),
+        /*for(int i=0; i<10; i++){
+            dbManager.addItemPonto("Ponto nº " + i);
+        }*/
+
+        ArrayList<String> itens = dbManager.getAllItensPonto();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this,
                 android.R.layout.simple_list_item_1,
-                android.R.id.text1,
                 itens
         );
 
-        listaItens.setAdapter(adaptador);
+        ListView listaItens = (ListView) findViewById(R.id.list_view_pontos);
+        listaItens.setAdapter(adapter);
 
         listaItens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 if (i == 0) {
-                    Intent it = new Intent(NovaTela2.this, TelaTeste0.class);
+                    Intent it = new Intent(PointActivity.this, DefaultActivity.class);
                     startActivity(it);
                 }
             }
         });
     };
-
 }

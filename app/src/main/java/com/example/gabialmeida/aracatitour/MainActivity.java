@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout);
+        setContentView(R.layout.layout_main);
 
         Button BtRestaurantes;
         BtRestaurantes = (Button) findViewById(R.id.restaurantes);
@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
         @Override
         public void onClick(View view) {
 
-            Intent it = new Intent(MainActivity.this, NovaTela1.class);
+            Intent it = new Intent(MainActivity.this, RestaurantActiviry.class);
             startActivity(it);
         }
     };
@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
     private View.OnClickListener BtHoteisAction = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent it = new Intent(MainActivity.this, NovaTela2.class);
+            Intent it = new Intent(MainActivity.this, HotelActivity.class);
             startActivity(it);
         }
     };
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
     private View.OnClickListener BtPontosAction = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent it = new Intent(MainActivity.this, NovaTela3.class);
+            Intent it = new Intent(MainActivity.this, PointActivity.class);
             startActivity(it);
         }
     };
@@ -75,7 +75,7 @@ public class MainActivity extends Activity {
     private View.OnClickListener BtLocaisProximosAction = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent it = new Intent(MainActivity.this, NovaTela4.class);
+            Intent it = new Intent(MainActivity.this, MapActivity.class);
             startActivity(it);
         }
     };

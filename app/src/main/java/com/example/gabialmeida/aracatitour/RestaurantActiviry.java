@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.gabialmeida.aracatitour.Database.ManegeDatabase;
+import com.example.gabialmeida.aracatitour.Database.ManageDatabase;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
  * Created by Gabi Almeida on 22/11/2016.
  */
 
-public class NovaTela1 extends AppCompatActivity {
+public class RestaurantActiviry extends AppCompatActivity {
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -33,16 +33,16 @@ public class NovaTela1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout2);
+        setContentView(R.layout.layout_res);
 
-        ManegeDatabase dbManager = new ManegeDatabase(this);
-        //dbManager.deleteRestaurante();
+        ManageDatabase dbManager = new ManageDatabase(this);
+        //dbManager.deleteTableRestaurante();
 
         /*for(int i=0; i<10; i++){
-            dbManager.addItem("Restaurante nº " + i);
+            dbManager.addItemRestaurante("Restaurante nº " + i);
         }*/
 
-        ArrayList<String> itens = dbManager.getAllItens();
+        ArrayList<String> itens = dbManager.getAllItensRestaurante();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this,
@@ -58,7 +58,7 @@ public class NovaTela1 extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 if (i == 0) {
-                    Intent it = new Intent(NovaTela1.this, TelaTeste0.class);
+                    Intent it = new Intent(RestaurantActiviry.this, DefaultActivity.class);
                     startActivity(it);
                 }
             }
@@ -74,7 +74,7 @@ public class NovaTela1 extends AppCompatActivity {
      */
     public Action getIndexApiAction() {
         Thing object = new Thing.Builder()
-                .setName("NovaTela1 Page") // TODO: Define a title for the content shown.
+                .setName("RestaurantActiviry Page") // TODO: Define a title for the content shown.
                 // TODO: Make sure this auto-generated URL is correct.
                 .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
                 .build();
