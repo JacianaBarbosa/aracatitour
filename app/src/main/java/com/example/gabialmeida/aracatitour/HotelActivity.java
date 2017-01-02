@@ -18,19 +18,17 @@ import java.util.ArrayList;
 
 public class HotelActivity extends Activity {
 
+    public int id;
+    private int var = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_hot);
 
         ManageDatabase dbManager = new ManageDatabase(this);
-        //dbManager.deleteTableHotel();
 
-        /*for(int i=0; i<10; i++){
-            dbManager.addItemHotel("Hotel nº " + i);
-        }*/
-
-        ArrayList<String> itens = dbManager.getAllItensHotel();
+        ArrayList<String> itens = dbManager.getAllItens("tbHotel", "HOT_NOME");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this,
@@ -44,11 +42,7 @@ public class HotelActivity extends Activity {
         listaItens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                if (i == 0) {
-                    Intent it = new Intent(HotelActivity.this, DefaultActivity.class);
-                    startActivity(it);
-                }
+                startActivity(new Intent(HotelActivity.this, DefaultActivity.class));
             }
         });
     };

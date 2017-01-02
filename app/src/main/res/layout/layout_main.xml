@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/restaurantes"
-        android:layout_weight="0.24"
+        android:layout_weight="0.25"
         android:onClick="layout2"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/hoteis"
-        android:layout_weight="0.24"
+        android:layout_weight="0.25"
         android:onClick="layout3"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pontos"
-        android:layout_weight="0.24"
+        android:layout_weight="0.25"
         android:onClick="layout4"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/locais"
-        android:layout_weight="0.24"
+        android:layout_weight="0.25"
         android:onClick="layout5"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 </LinearLayout>

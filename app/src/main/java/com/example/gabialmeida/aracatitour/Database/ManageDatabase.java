@@ -20,45 +20,28 @@ public class ManageDatabase {
         }
     }
 
-    public void addItemRestaurante(String RES_NOME){
-        String sql = "INSERT INTO tbRestaurante (RES_NOME) VALUES ('"+RES_NOME+"')";
+    public void addItem(){
         SQLiteDatabase db = crtDatabase.getWritableDatabase();
-        db.execSQL(sql);
+        String RES = "INSERT INTO tbRestaurante (RES_NOME, RES_RUA, RES_NUMERO, RES_BAIRRO) " +
+                "VALUES ('Chaparral', 'Rua 1', 100, 'Dique')";
+        db.execSQL(RES);
+        RES = "INSERT INTO tbRestaurante (RES_NOME, RES_RUA, RES_NUMERO, RES_BAIRRO) " +
+                "VALUES ('Picanha no Ponto', 'Rua 2', 200, 'Pedregal')";
+        db.execSQL(RES);
+        RES = "INSERT INTO tbRestaurante (RES_NOME, RES_RUA, RES_NUMERO, RES_BAIRRO) " +
+                "VALUES ('Super Grill', 'Rua 3', 300, 'Centro')";
+        db.execSQL(RES);
+        RES = "INSERT INTO tbRestaurante (RES_NOME, RES_RUA, RES_NUMERO, RES_BAIRRO) " +
+                "VALUES ('Comida Caseira', 'Rua 4', 400, 'Centro')";
+        db.execSQL(RES);
+        RES = "INSERT INTO tbRestaurante (RES_NOME, RES_RUA, RES_NUMERO, RES_BAIRRO) " +
+                "VALUES ('Talher de Prata', 'Rua 5', 500, 'Centro')";
+        db.execSQL(RES);
     }
 
-    public void addItemHotel(String HOT_NOME){
-        String sql = "INSERT INTO tbHotel (HOT_NOME) VALUES ('"+HOT_NOME+"')";
-        SQLiteDatabase db = crtDatabase.getWritableDatabase();
-        db.execSQL(sql);
-    }
-
-    public void addItemPonto(String PNT_NOME){
-        String sql = "INSERT INTO tbPonto (PNT_NOME) VALUES ('"+PNT_NOME+"')";
-        SQLiteDatabase db = crtDatabase.getWritableDatabase();
-        db.execSQL(sql);
-    }
-
-    public void deleteTableRestaurante(){
-        String deleteRestaurante = "DELETE FROM tbRestaurante;";
-        SQLiteDatabase db = crtDatabase.getWritableDatabase();
-        db.execSQL(deleteRestaurante);
-    }
-
-    public void deleteTableHotel(){
-        String deleteRestaurante = "DELETE FROM tbHotel;";
-        SQLiteDatabase db = crtDatabase.getWritableDatabase();
-        db.execSQL(deleteRestaurante);
-    }
-
-    public void deleteTablePonto(){
-        String deleteRestaurante = "DELETE FROM tbPonto;";
-        SQLiteDatabase db = crtDatabase.getWritableDatabase();
-        db.execSQL(deleteRestaurante);
-    }
-
-    public ArrayList<String> getAllItensRestaurante(){
+    public ArrayList<String> getAllItens(String tabela, String atributo){
         SQLiteDatabase db = crtDatabase.getReadableDatabase();
-        String sql = "SELECT RES_NOME FROM tbRestaurante";
+        String sql = "SELECT "+atributo+" FROM "+tabela+"";
         Cursor cursor = db.rawQuery(sql, null);
         ArrayList<String> itens = null;
 
@@ -72,39 +55,4 @@ public class ManageDatabase {
 
         return itens;
     }
-
-    public ArrayList<String> getAllItensHotel(){
-        SQLiteDatabase db = crtDatabase.getReadableDatabase();
-        String sql = "SELECT HOT_NOME FROM tbHotel";
-        Cursor cursor = db.rawQuery(sql, null);
-        ArrayList<String> itens = null;
-
-        if(cursor != null && cursor.moveToFirst()){
-            itens = new ArrayList<String>();
-
-            do{
-                itens.add(cursor.getString(0));
-            }while (cursor.moveToNext());
-        }
-
-        return itens;
-    }
-
-    public ArrayList<String> getAllItensPonto(){
-        SQLiteDatabase db = crtDatabase.getReadableDatabase();
-        String sql = "SELECT PNT_NOME FROM tbPonto";
-        Cursor cursor = db.rawQuery(sql, null);
-        ArrayList<String> itens = null;
-
-        if(cursor != null && cursor.moveToFirst()){
-            itens = new ArrayList<String>();
-
-            do{
-                itens.add(cursor.getString(0));
-            }while (cursor.moveToNext());
-        }
-
-        return itens;
-    }
-
 }

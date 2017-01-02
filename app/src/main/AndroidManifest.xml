@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".RestaurantActiviry"></activity>
+        <activity android:name=".RestaurantActivity"></activity>
         <activity android:name=".HotelActivity"></activity>
         <activity android:name=".PointActivity"></activity>
         <activity android:name=".MapActivity"></activity>

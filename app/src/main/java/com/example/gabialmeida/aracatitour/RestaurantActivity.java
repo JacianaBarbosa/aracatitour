@@ -1,8 +1,8 @@
 package com.example.gabialmeida.aracatitour;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,23 +12,24 @@ import com.example.gabialmeida.aracatitour.Database.ManageDatabase;
 
 import java.util.ArrayList;
 
+
 /**
- * Created by Gabi Almeida on 25/11/2016.
+ * Created by Gabi Almeida on 22/11/2016.
  */
 
-public class PointActivity extends Activity {
+public class RestaurantActivity extends AppCompatActivity {
 
     public int id;
     private int var = 0;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_pnt);
+        setContentView(R.layout.layout_res);
 
         ManageDatabase dbManager = new ManageDatabase(this);
 
-        ArrayList<String> itens = dbManager.getAllItens("tbPonto", "PNT_NOME");
+        ArrayList<String> itens = dbManager.getAllItens("tbRestaurante", "RES_NOME");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this,
@@ -36,14 +37,16 @@ public class PointActivity extends Activity {
                 itens
         );
 
-        ListView listaItens = (ListView) findViewById(R.id.list_view_pontos);
+        ListView listaItens = (ListView) findViewById(R.id.list_view_restaurantes);
         listaItens.setAdapter(adapter);
 
         listaItens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity(new Intent(PointActivity.this, DefaultActivity.class));
+                Intent it = new Intent(RestaurantActivity.this, DefaultActivity.class);
+                it.putExtra("ID", Integer.toString(i));
+                startActivity(it);
             }
         });
-    };
+    }
 }

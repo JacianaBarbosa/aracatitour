@@ -12,9 +12,11 @@ public class CreateDatabase extends SQLiteOpenHelper {
 
     private static String NOME_BANCO = "BDGuiaTuristico.db";
     private static int VERSAO = 1;
+
+
     private static String CreateRes =
 
-            "CREATE TABLE tbRestaurante(" +
+            "CREATE TABLE tbRestaurante (" +
             "RES_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
             "RES_NOME TEXT," +
             "RES_RUA TEXT," +
@@ -82,7 +84,9 @@ public class CreateDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP DATABASE IF EXISTS BDGuiaTuristico.db");
+        onCreate(db);
     }
+
 
 }
