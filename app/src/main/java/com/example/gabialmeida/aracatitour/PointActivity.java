@@ -18,9 +18,6 @@ import java.util.ArrayList;
 
 public class PointActivity extends Activity {
 
-    public int id;
-    private int var = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -42,7 +39,15 @@ public class PointActivity extends Activity {
         listaItens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity(new Intent(PointActivity.this, DefaultActivity.class));
+                Intent it = new Intent(PointActivity.this, DefaultActivity.class);
+                it.putExtra("ID", Integer.toString(i+1));
+                it.putExtra("tabela", "tbPonto");
+                it.putExtra("atributoID","PNT_ID");
+                it.putExtra("atributoNome","PNT_NOME");
+                it.putExtra("atributoRua","PNT_RUA");
+                it.putExtra("atributoNumero","PNT_NUMERO");
+                it.putExtra("atributoBairro","PNT_BAIRRO");
+                startActivity(it);
             }
         });
     };

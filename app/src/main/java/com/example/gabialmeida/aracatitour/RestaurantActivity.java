@@ -19,9 +19,6 @@ import java.util.ArrayList;
 
 public class RestaurantActivity extends AppCompatActivity {
 
-    public int id;
-    private int var = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

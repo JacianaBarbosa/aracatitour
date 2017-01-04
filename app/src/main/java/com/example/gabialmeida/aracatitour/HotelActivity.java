@@ -18,9 +18,6 @@ import java.util.ArrayList;
 
 public class HotelActivity extends Activity {
 
-    public int id;
-    private int var = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -42,7 +39,15 @@ public class HotelActivity extends Activity {
         listaItens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity(new Intent(HotelActivity.this, DefaultActivity.class));
+                Intent it = new Intent(HotelActivity.this, DefaultActivity.class);
+                it.putExtra("ID", Integer.toString(i+1));
+                it.putExtra("tabela", "tbHotel");
+                it.putExtra("atributoID","HOT_ID");
+                it.putExtra("atributoNome","HOT_NOME");
+                it.putExtra("atributoRua","HOT_RUA");
+                it.putExtra("atributoNumero","HOT_NUMERO");
+                it.putExtra("atributoBairro","HOT_BAIRRO");
+                startActivity(it);
             }
         });
     };
