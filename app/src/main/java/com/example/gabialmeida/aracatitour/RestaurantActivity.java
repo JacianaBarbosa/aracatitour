@@ -44,7 +44,13 @@ public class RestaurantActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent it = new Intent(RestaurantActivity.this, DefaultActivity.class);
-                it.putExtra("ID", Integer.toString(i));
+                it.putExtra("ID", Integer.toString(i+1));
+                it.putExtra("tabela", "tbRestaurante");
+                it.putExtra("atributoID","RES_ID");
+                it.putExtra("atributoNome","RES_NOME");
+                it.putExtra("atributoRua","RES_RUA");
+                it.putExtra("atributoNumero","RES_NUMERO");
+                it.putExtra("atributoBairro","RES_BAIRRO");
                 startActivity(it);
             }
         });
