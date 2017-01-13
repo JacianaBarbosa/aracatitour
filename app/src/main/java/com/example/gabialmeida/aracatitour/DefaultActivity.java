@@ -42,20 +42,13 @@ public class DefaultActivity extends AppCompatActivity {
             Bundle extra = getIntent().getExtras();
 
             if (extra != null) {
-                String lastText = extra.getString("ID");
-                ID = Integer.parseInt(lastText);
-                lastText = extra.getString("tabela");
-                tabela = lastText;
-                lastText = extra.getString("atributoID");
-                atributoID = lastText;
-                lastText = extra.getString("atributoNome");
-                atributoNome = lastText;
-                lastText = extra.getString("atributoRua");
-                atributoRua = lastText;
-                lastText = extra.getString("atributoNumero");
-                atributoNumero = lastText;
-                lastText = extra.getString("atributoBairro");
-                atributoBairro = lastText;
+                ID = Integer.parseInt(extra.getString("ID"));
+                tabela = extra.getString("tabela");
+                atributoID = extra.getString("atributoID");
+                atributoNome = extra.getString("atributoNome");
+                atributoRua = extra.getString("atributoRua");
+                atributoNumero = extra.getString("atributoNumero");
+                atributoBairro = extra.getString("atributoBairro");
             }
 
             dataBase = openOrCreateDatabase("BDGuiaTuristico.db", MODE_PRIVATE, null);
