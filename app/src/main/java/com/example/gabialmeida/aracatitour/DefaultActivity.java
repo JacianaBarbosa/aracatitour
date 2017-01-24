@@ -1,16 +1,16 @@
 package com.example.gabialmeida.aracatitour;
 
+import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 /**
  * Created by Alberto Zaranza on 29/11/2016.
  */
 
-public class DefaultActivity extends AppCompatActivity {
+public class DefaultActivity extends Activity {
 
     private TextView textNome;
     private TextView textRua;
