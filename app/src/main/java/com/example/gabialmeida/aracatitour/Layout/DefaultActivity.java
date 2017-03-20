@@ -1,10 +1,13 @@
-package com.example.gabialmeida.aracatitour;
+package com.example.gabialmeida.aracatitour.Layout;
 
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.gabialmeida.aracatitour.R;
 
 /**
  * Created by Alberto Zaranza on 29/11/2016.
@@ -16,6 +19,7 @@ public class DefaultActivity extends Activity {
     private TextView textRua;
     private TextView textNumero;
     private TextView textBairro;
+    private ImageView imagem;
 
     private SQLiteDatabase dataBase;
 
@@ -26,6 +30,7 @@ public class DefaultActivity extends Activity {
     private String atributoRua;
     private String atributoNumero;
     private String atributoBairro;
+    private String atributoImagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,7 @@ public class DefaultActivity extends Activity {
         textRua = (TextView) findViewById(R.id.textViewRua);
         textNumero = (TextView) findViewById(R.id.textViewNum);
         textBairro = (TextView) findViewById(R.id.textViewBairro);
+        imagem = (ImageView) findViewById(R.id.imageView);
 
 
         try {
@@ -49,7 +55,15 @@ public class DefaultActivity extends Activity {
                 atributoRua = extra.getString("atributoRua");
                 atributoNumero = extra.getString("atributoNumero");
                 atributoBairro = extra.getString("atributoBairro");
+                atributoImagem = extra.getString("atributoImagem");
             }
+
+            /*Context context = getApplicationContext();
+            CharSequence text = atributoImagem;
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();*/
 
             dataBase = openOrCreateDatabase("BDGuiaTuristico.db", MODE_PRIVATE, null);
 
@@ -58,10 +72,10 @@ public class DefaultActivity extends Activity {
             cursor.moveToFirst();
 
             while (cursor != null) {
-                textNome.setText(cursor.getString(cursor.getColumnIndex("" + atributoNome + "")));
-                textRua.setText(cursor.getString(cursor.getColumnIndex("" + atributoRua + "")));
-                textNumero.setText(cursor.getString(cursor.getColumnIndex("" + atributoNumero + "")));
-                textBairro.setText(cursor.getString(cursor.getColumnIndex("" + atributoBairro + "")));
+                textNome.setText(cursor.getString(cursor.getColumnIndex(atributoNome)));
+                textRua.setText(cursor.getString(cursor.getColumnIndex(atributoRua)));
+                textNumero.setText(cursor.getString(cursor.getColumnIndex(atributoNumero)));
+                textBairro.setText(cursor.getString(cursor.getColumnIndex(atributoBairro)));
                 cursor.moveToNext();
             }
 

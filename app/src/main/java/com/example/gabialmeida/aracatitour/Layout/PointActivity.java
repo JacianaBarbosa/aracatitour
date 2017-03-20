@@ -1,4 +1,4 @@
-package com.example.gabialmeida.aracatitour;
+package com.example.gabialmeida.aracatitour.Layout;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.gabialmeida.aracatitour.Database.ManageDatabase;
+import com.example.gabialmeida.aracatitour.R;
 
 import java.util.ArrayList;
 
