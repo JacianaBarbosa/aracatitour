@@ -22,7 +22,7 @@ public class CreateDatabase extends SQLiteOpenHelper {
             "RES_RUA TEXT," +
             "RES_NUMERO INTEGER," +
             "RES_BAIRRO TEXT," +
-            "RES_IMAGEM BLOB" +
+            "RES_IMAGEM INTEGER" +
             ");";
 
     private static String CreateRst =
@@ -41,7 +41,7 @@ public class CreateDatabase extends SQLiteOpenHelper {
             "HOT_RUA TEXT," +
             "HOT_NUMERO INTEGER," +
             "HOT_BAIRRO TEXT," +
-            "HOT_IMAGEM BLOB" +
+            "HOT_IMAGEM INTEGER" +
             ");";
 
     private static String CreateHtt =
@@ -60,7 +60,7 @@ public class CreateDatabase extends SQLiteOpenHelper {
             "PNT_RUA TEXT," +
             "PNT_NUMERO INTEGER," +
             "PNT_BAIRRO TEXT," +
-            "PNT_IMAGEM BLOB" +
+            "PNT_IMAGEM INTEGER" +
             ");";
 
     private static String CreatePtt =

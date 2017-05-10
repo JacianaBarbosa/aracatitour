@@ -54,6 +54,7 @@ public class HotelActivity extends Activity {
                 it.putExtra("atributoRua","HOT_RUA");
                 it.putExtra("atributoNumero","HOT_NUMERO");
                 it.putExtra("atributoBairro","HOT_BAIRRO");
+                it.putExtra("atributoImagem", "HOT_IMAGEM");
                 startActivity(it);
             }
         });

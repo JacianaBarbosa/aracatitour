@@ -76,13 +76,13 @@ public class DefaultActivity extends Activity {
                 textRua.setText(cursor.getString(cursor.getColumnIndex(atributoRua)));
                 textNumero.setText(cursor.getString(cursor.getColumnIndex(atributoNumero)));
                 textBairro.setText(cursor.getString(cursor.getColumnIndex(atributoBairro)));
+                imagem.setImageResource(cursor.getInt(cursor.getColumnIndex(atributoImagem)));
                 cursor.moveToNext();
             }
 
-        }catch (Exception e){
+        }catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
 }

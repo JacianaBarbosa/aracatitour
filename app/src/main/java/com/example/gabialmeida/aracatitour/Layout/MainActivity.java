@@ -62,6 +62,7 @@ public class MainActivity extends Activity {
             if (!mboolean) {
                 // do the thing for the first time
 
+                /*CriarImagens.criarImagens(MainActivity.this, getResources(), R.drawable.logorestaurante01, "logorestaurante01.png");*/
                 dbManager.addItem();
 
                 settings = getSharedPreferences("PREFS_NAME", 0);

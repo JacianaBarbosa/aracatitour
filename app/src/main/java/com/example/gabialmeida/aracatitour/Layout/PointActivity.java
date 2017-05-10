@@ -54,6 +54,7 @@ public class PointActivity extends Activity {
                 it.putExtra("atributoRua","PNT_RUA");
                 it.putExtra("atributoNumero","PNT_NUMERO");
                 it.putExtra("atributoBairro","PNT_BAIRRO");
+                it.putExtra("atributoImagem", "PNT_IMAGEM");
                 startActivity(it);
             }
         });
