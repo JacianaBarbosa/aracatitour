@@ -39,7 +39,7 @@ public class DefaultActivity extends Activity {
 
         textNome = (TextView) findViewById(R.id.textViewNome);
         textRua = (TextView) findViewById(R.id.textViewRua);
-        textNumero = (TextView) findViewById(R.id.textViewNum);
+        textNumero = (TextView) findViewById(R.id.textViewNumero);
         textBairro = (TextView) findViewById(R.id.textViewBairro);
         imagem = (ImageView) findViewById(R.id.imageView);
 

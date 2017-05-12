@@ -1,88 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewNum"
-        android:layout_alignLeft="@+id/textViewNum"
-        android:layout_alignStart="@+id/textViewNum"
-        android:layout_marginTop="17dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@color/cast_expanded_controller_background_color" />
+
+    <TextView
+        android:id="@+id/textViewNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="29dp"
+        android:text="TextViewNome" />
+
+    <TextView
         android:id="@+id/textViewBairro"
-        android:text="Bairro" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:id="@+id/textViewNum"
-        android:layout_below="@+id/textViewRua"
-        android:layout_alignLeft="@+id/textViewRua"
-        android:layout_alignStart="@+id/textViewRua"
-        android:text="Número" />
+        android:text="TextViewBairro"
+        android:layout_below="@+id/textViewNumero"
+        android:layout_alignLeft="@+id/textViewNumero"
+        android:layout_alignStart="@+id/textViewNumero" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
         android:id="@+id/textViewRua"
-        android:text="Rua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextViewRua"
         android:layout_below="@+id/textViewNome"
         android:layout_alignLeft="@+id/textViewNome"
         android:layout_alignStart="@+id/textViewNome" />
 
     <TextView
+        android:id="@+id/textViewNumero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewContato"
-        android:text="Contato(s):"
-        android:layout_marginTop="49dp"
-        android:layout_below="@+id/textViewBairro"
+        android:text="TextViewNumero"
+        android:layout_below="@+id/textViewRua"
+        android:layout_alignLeft="@+id/textViewRua"
+        android:layout_alignStart="@+id/textViewRua" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textViewBairro"
-        android:layout_alignStart="@+id/textViewBairro" />
+        android:layout_alignStart="@+id/textViewBairro"
+        android:layout_below="@+id/textViewBairro"
+        android:text="Contato:" />
 
     <TextView
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewPhone1"
-        android:text="(00) 0000 - 0000"
-        android:layout_below="@+id/textViewContato"
-        android:layout_alignLeft="@+id/textViewContato"
-        android:layout_alignStart="@+id/textViewContato"
-        android:layout_marginTop="13dp" />
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_below="@+id/textView7"
+        android:text="0000-0000" />
 
     <TextView
-        android:text="(11) 1111 - 1111"
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewPhone2"
-        android:layout_below="@+id/textViewPhone1"
-        android:layout_alignLeft="@+id/textViewPhone1"
-        android:layout_alignStart="@+id/textViewPhone1" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="49dp"
-        android:layout_marginStart="49dp"
-        android:id="@+id/textViewNome"
-        android:text="Nome"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/cast_expanded_controller_bg_gradient_light"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="82dp"
-        android:id="@+id/imageView" />
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_alignStart="@+id/textView8"
+        android:layout_below="@+id/textView8"
+        android:text="1111-1111" />
 
 </RelativeLayout>
